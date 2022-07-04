@@ -1,0 +1,18 @@
+{% extends 'index.html' %}
+
+
+{% block Farmers %}
+    <h3>Farmers list:</h3>
+<table border="1">
+    <thead>
+        <th>Category</th>
+        <th>See more</th>
+    </thead>
+    {% for x in base %}
+        <tr>
+            <td>{{ x.farmer.name }}</td>
+            <td><a href="{{ x.get_absolute_url }}">See more</a></td>
+        </tr>
+    {% endfor %}
+</table>
+{% endblock %}
